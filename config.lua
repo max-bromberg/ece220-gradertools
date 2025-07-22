@@ -1,3 +1,10 @@
+-- Disable vale LSP because it is not compatible with the version of glibc on EWS
+lvim.lsp.installer.setup.automatic_installation.exclude = { "vale_ls" }
+lvim.lsp.automatic_configuration.skipped_servers = vim.list_extend(
+  lvim.lsp.automatic_configuration.skipped_servers or {},
+  { "vale_ls" }
+)
+
 -- Plugin setup
 lvim.plugins = {
   { "rcarriga/nvim-notify" },
