@@ -96,18 +96,26 @@ end
 
 -- Close current buffers safely
 function CloseCurrentFiles()
+  local current_dir = grading_state.student_dirs[grading_state.current_index]
+  if not current_dir then
+    return
+  end
+
   for _, buf in ipairs(vim.api.nvim_list_bufs()) do
     local name = vim.api.nvim_buf_get_name(buf)
-    if name:match("grade%.txt$") then
-      vim.api.nvim_set_current_buf(buf)
-      vim.cmd("write")
-      vim.cmd("bdelete")
-    elseif name:match(grading_state.code_filename .. "$") then
-      vim.api.nvim_set_current_buf(buf)
-      vim.cmd("bdelete!")  -- discard changes
+    if name:find(current_dir, 1, true) then
+      if name:match("grade%.txt$") then
+        vim.api.nvim_set_current_buf(buf)
+        vim.cmd("write")
+        vim.cmd("bdelete")
+      elseif name:match(grading_state.code_filename .. "$") then
+        vim.api.nvim_set_current_buf(buf)
+        vim.cmd("bdelete!") -- discard changes
+      end
     end
   end
 end
+
 
 -- Open next student or show completion
 function OpenNextStudent()
