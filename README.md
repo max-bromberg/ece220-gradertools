@@ -4,8 +4,10 @@
 ## Setup & Configuration
 Follow [Old Abe's EWS](https://courses.grainger.illinois.edu/ece220/sp2025/pages/resources/old_abes_ews/) instructions to install Ranger and LunarVim. Once it's installed open LunarVim with `lvim` and press `c` to open the configuration. From here you can paste in some or all of `config.lua` and make changes as needed. You will want to restart LunarVim to install new plugins.
 
-Now, uninstall vale-ls as it's not compatible with glibc on EWS and will cause many warnings when opening grade.txt files; run the following commands in LunarVim:
+Now, uninstall `vale-ls` as it's not compatible with `glibc` on EWS and will cause many warnings when opening `grade.txt` files; run the following commands in LunarVim:
+
 `:MasonUninstall vale-ls`
+
 `:LspUninstall vale_ls`
 
 > There are one or two places where the grading directory is baked in, maybe one day I will add a semester/year option. Until then, just `CTRL+F` and change the directories to match the semester you are grading for.
