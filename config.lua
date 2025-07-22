@@ -1,4 +1,4 @@
--- Existing plugin setup (unchanged)
+-- Plugin setup
 lvim.plugins = {
   { "rcarriga/nvim-notify" },
   {
@@ -18,7 +18,7 @@ require("notify").setup({
   timeout = 10000,
 })
 
--- Buffer settings
+-- Buffer settings (allows you to see entire intro paragraph on screen)
 vim.opt.wrap = true
 vim.opt.linebreak = true
 
