@@ -19,11 +19,15 @@ lvim.plugins = {
 }
 lvim.keys.normal_mode["<leader>r"] = ":RnvimrToggle<CR>"
 
--- Notification plugin setup
-vim.notify = require('notify')
-require("notify").setup({
-  timeout = 10000,
-})
+-- Notification plugin setup, suppress LSP warnings
+local notify = require('notify')
+vim.notify = function(msg, log_level, opts)
+  if type(msg) == "string" and msg:match("Client with id %d+ not attached to buffer %d+") then
+    return
+  end
+  return notify(msg, log_level, opts)
+end
+
 
 -- Buffer settings (allows you to see entire intro paragraph on screen)
 vim.opt.wrap = true
