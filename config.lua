@@ -194,7 +194,8 @@ function EnterGrades()
       -- Allow trailing spaces after number:
       late = tonumber(line:match("(%d+)%s*$")) or 0
     elseif line:match("^Functionality:") then
-      func = tonumber(line:match("(%d+)%s*$")) or 0
+      local raw_func = tonumber(line:match("(%d+%.?%d*)%s*$")) or 0
+      func = math.ceil(raw_func)
     elseif line:match("^Comments and Style:") then
       comment_idx = idx
     elseif line:match("^Intro paragraph:") then
