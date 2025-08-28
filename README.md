@@ -2,7 +2,7 @@
 > LunarVim/Neovim config which adds useful grader functions and keybinds for UIUC ECE 220 Course Staff
 
 ## Setup & Configuration
-Follow [Old Abe's EWS](https://courses.grainger.illinois.edu/ece220/sp2025/pages/resources/old_abes_ews/) instructions to install Ranger and LunarVim. Once it's installed open LunarVim with `lvim` and press `c` to open the configuration. From here you can paste in some or all of `config.lua` and make changes as needed. You will want to restart LunarVim to install new plugins.
+Follow [Old Abe's EWS](https://courses.grainger.illinois.edu/ece220/fa2025/pages/resources/old_abes_ews/) instructions to install Ranger and LunarVim. Once it's installed open LunarVim with `lvim` and press `c` to open the configuration. From here you can paste in some or all of `config.lua` and make changes as needed. You will want to restart LunarVim to install new plugins.
 
 Now, uninstall `vale-ls` as it's not compatible with `glibc` on EWS and will cause many warnings when opening `grade.txt` files; run the following commands in LunarVim:
 
