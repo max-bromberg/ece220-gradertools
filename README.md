@@ -1,5 +1,6 @@
+![Example image of grader tools in use](https://cdn.blulight.show/raw/XH6BjM.png)
 # ECE 220 Grader Tools
-> [LunarVim](https://www.lunarvim.org/)/Neovim config which adds useful grader functions and keybinds for UIUC ECE 220 Course Staff
+> This config creates a grading environment for UIUC ECE 220 Course Staff by adding functions and keybinds to [LunarVim](https://www.lunarvim.org/)/Neovim
 
 ## Setup & Configuration
 Follow [Old Abe's EWS](https://courses.grainger.illinois.edu/ece220/fa2025/pages/resources/old_abes_ews/) instructions to install Ranger and LunarVim. Once it's installed open LunarVim with `lvim` and press `c` to open the configuration. From here you can paste in some or all of `config.lua` and make changes as needed. You will want to restart LunarVim to install new plugins.
